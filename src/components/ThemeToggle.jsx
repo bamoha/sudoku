@@ -48,9 +48,9 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-xl text-amber-500 dark:text-sky-400
-                 bg-white dark:bg-slate-800
-                 hover:bg-slate-100 dark:hover:bg-slate-700
+      className="p-1.5 rounded-lg text-amber-500 dark:text-sky-300
+                 bg-white dark:bg-slate-700
+                 hover:bg-slate-100 dark:hover:bg-slate-600
                  active:scale-95
                  focus:outline-none focus:ring-2 focus:ring-teal-500
                  transition-all duration-150"

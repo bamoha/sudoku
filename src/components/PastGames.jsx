@@ -46,17 +46,17 @@ export default function PastGames({ isOpen, onClose, onLoadGame }) {
       onClick={onClose}
     >
       <div 
-        className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md max-h-[85vh] flex flex-col animate-modal-slide"
+        className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-md max-h-[85vh] flex flex-col animate-modal-slide"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">Game History</h2>
+        <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">Game History</h2>
           <button
             onClick={onClose}
-            className="p-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200
-                       hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg
-                       focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+            className="p-1 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200
+                       hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg
+                       focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -68,12 +68,12 @@ export default function PastGames({ isOpen, onClose, onLoadGame }) {
         <div className="overflow-y-auto flex-1 p-4">
           {pastGames.length === 0 ? (
             <div className="text-center py-12">
-              <svg className="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-16 h-16 mx-auto text-slate-300 dark:text-slate-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} 
                       d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
-              <p className="text-gray-500 dark:text-gray-400 font-medium">No saved games yet</p>
-              <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">
+              <p className="text-slate-500 dark:text-slate-400 font-medium">No saved games yet</p>
+              <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">
                 Your game history will appear here
               </p>
             </div>
@@ -83,34 +83,34 @@ export default function PastGames({ isOpen, onClose, onLoadGame }) {
                 <div
                   key={game.id}
                   onClick={() => handleLoadGame(game)}
-                  className="p-3 sm:p-4 border border-gray-200 dark:border-gray-700 rounded-lg
-                             hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer
-                             active:bg-gray-100 dark:active:bg-gray-700
+                  className="p-3 sm:p-4 border border-slate-200 dark:border-slate-700 rounded-lg
+                             hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer
+                             active:bg-slate-100 dark:active:bg-slate-700
                              transition-colors duration-150"
                 >
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className={`px-2 py-0.5 text-xs font-semibold rounded-full
-                          ${game.difficulty === 'easy' ? 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300' : ''}
-                          ${game.difficulty === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300' : ''}
+                          ${game.difficulty === 'easy' ? 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300' : ''}
+                          ${game.difficulty === 'medium' ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300' : ''}
                           ${game.difficulty === 'hard' ? 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300' : ''}
                         `}>
                           {getDifficultyLabel(game.difficulty)}
                         </span>
                         {game.mistakes > 0 && (
-                          <span className="text-xs text-gray-500 dark:text-gray-400">
+                          <span className="text-xs text-slate-500 dark:text-slate-400">
                             {game.mistakes} {game.mistakes === 1 ? 'mistake' : 'mistakes'}
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                         {formatDate(game.savedAt)}
                       </p>
                     </div>
                     <button
                       onClick={(e) => handleDeleteGame(game.id, e)}
-                      className="p-2 text-gray-400 hover:text-red-500 dark:hover:text-red-400
+                      className="p-2 text-slate-400 hover:text-red-500 dark:hover:text-red-400
                                  hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg
                                  focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
                       aria-label="Delete game"
@@ -129,17 +129,17 @@ export default function PastGames({ isOpen, onClose, onLoadGame }) {
 
         {/* Footer with Clear All */}
         {pastGames.length > 0 && (
-          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="p-4 border-t border-slate-200 dark:border-slate-700">
             {showConfirmClear ? (
               <div className="flex items-center justify-between gap-2">
-                <span className="text-sm text-gray-600 dark:text-gray-400">Clear all history?</span>
+                <span className="text-sm text-slate-600 dark:text-slate-400">Clear all history?</span>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setShowConfirmClear(false)}
-                    className="px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300
-                               bg-gray-100 dark:bg-gray-700 rounded-md
-                               hover:bg-gray-200 dark:hover:bg-gray-600
-                               focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors"
+                    className="px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300
+                               bg-slate-100 dark:bg-slate-700 rounded-md
+                               hover:bg-slate-200 dark:hover:bg-slate-600
+                               focus:outline-none focus:ring-2 focus:ring-slate-500 transition-colors"
                   >
                     Cancel
                   </button>

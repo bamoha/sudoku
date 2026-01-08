@@ -61,11 +61,10 @@ export default function Board({
       }}
     >
       <div className="w-full h-full grid grid-cols-9 
-                      border-4 border-teal-500 dark:border-teal-400 
-                      bg-teal-200 dark:bg-teal-900/50 
-                      rounded-2xl overflow-hidden 
-                      shadow-xl shadow-teal-500/30 dark:shadow-teal-400/20
-                      ring-2 ring-teal-300 dark:ring-teal-600 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-900">
+                      border-[3px] border-teal-500 dark:border-teal-400 
+                      bg-teal-100 dark:bg-teal-900/30 
+                      rounded-xl overflow-hidden 
+                      shadow-lg shadow-teal-500/20 dark:shadow-teal-400/10">
         {Array.from({ length: BOARD_SIZE }).map((_, row) =>
           Array.from({ length: BOARD_SIZE }).map((_, col) => {
             const cellKey = `${row}-${col}`;

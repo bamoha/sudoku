@@ -54,18 +54,18 @@ export default function Cell({
   const displayValue = value ? value.toString() : '';
 
   const getBackgroundClass = () => {
-    if (hasError || isConflict) return 'bg-red-200 dark:bg-red-800/60';
-    if (isActive) return 'bg-teal-300 dark:bg-teal-600/80';
-    if (isSameNumber && value) return 'bg-teal-200 dark:bg-teal-700/60';
-    if (isHighlighted) return 'bg-teal-100/80 dark:bg-teal-800/40';
+    if (hasError || isConflict) return 'bg-red-100 dark:bg-red-900/50';
+    if (isActive) return 'bg-teal-200 dark:bg-teal-800';
+    if (isSameNumber && value) return 'bg-teal-100 dark:bg-teal-900/60';
+    if (isHighlighted) return 'bg-teal-50 dark:bg-slate-700';
     if (isInitial) return 'bg-slate-100 dark:bg-slate-800';
-    return 'bg-white dark:bg-slate-900';
+    return 'bg-white dark:bg-slate-800';
   };
 
   const getTextClass = () => {
-    if (hasError || isConflict) return 'text-red-700 dark:text-red-200';
-    if (isInitial) return 'text-slate-800 dark:text-slate-100';
-    return 'text-teal-600 dark:text-teal-300';
+    if (hasError || isConflict) return 'text-red-600 dark:text-red-400';
+    if (isInitial) return 'text-slate-700 dark:text-slate-100';
+    return 'text-teal-600 dark:text-teal-400';
   };
 
   return (
@@ -82,13 +82,13 @@ export default function Cell({
       className={`
         w-full h-full text-center select-none
         text-sm sm:text-base font-bold
-        border-teal-200/50 dark:border-teal-700/50
+        border-teal-200/60 dark:border-teal-600/40
         border-t border-l
         ${isBoxRight ? 'border-r-2 border-r-teal-400 dark:border-r-teal-500' : 'border-r'}
         ${isBoxBottom ? 'border-b-2 border-b-teal-400 dark:border-b-teal-500' : 'border-b'}
         ${getBackgroundClass()}
         ${getTextClass()}
-        ${isActive ? 'ring-2 ring-inset ring-teal-500 dark:ring-teal-400 z-10' : ''}
+        ${isActive ? 'ring-2 ring-inset ring-teal-500 dark:ring-teal-400' : ''}
         ${isShaking ? 'animate-shake' : ''}
         ${isInitial ? 'cursor-default' : 'cursor-pointer'}
         focus:outline-none
